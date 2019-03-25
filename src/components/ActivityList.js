@@ -1,23 +1,41 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text, View } from "react-native";
+import Card from "./Card";
+import CardSection from "./CardSection";
 
 const renderItems = items => {
-  return items.map(item => <Text>{item}</Text>);
+  return items.map((item, index) => <Text key={index}>{item}</Text>);
 };
 
 const renderExpenses = items => {
-  return items.map(item => <Text>{`${item.category} : ${item.cost}`}</Text>);
+  return items.map((item, index) => (
+    <Text key={index}>{`${item.category} : ${item.cost}`}</Text>
+  ));
 };
 
 const ActivityList = props => {
+  const { title, data } = props;
   return (
-    <View>
-      <Text>{props.title}</Text>
-      {props.title === "Expenses"
-        ? renderExpenses(props.data)
-        : renderItems(props.data)}
-    </View>
+    <Card>
+      <CardSection>
+        <View>
+          <Text>{title}</Text>
+        </View>
+      </CardSection>
+      <CardSection>
+        <View style={styles.hStyle}>
+          {title === "Expenses" ? renderExpenses(data) : renderItems(data)}
+        </View>
+      </CardSection>
+    </Card>
   );
+};
+
+const styles = {
+  hStyle: {
+    flexDirection: "column",
+    justifyContent: "space-around"
+  }
 };
 
 export default ActivityList;

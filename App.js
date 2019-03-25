@@ -20,7 +20,9 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <Everyday />
+      <View style={{ flex: 1 }}>
+        <Everyday />
+      </View>
       /*<View style={styles.container}>
         
         <Text style={styles.welcome}>Welcome Tanish Khadse!</Text>

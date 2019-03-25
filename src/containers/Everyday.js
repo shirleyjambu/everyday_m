@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import axios from "react-native-axios";
 import Header from "./../components/Header";
 import ActivityList from "./../components/ActivityList";
+import VoiceButton from "../components/VoiceButton";
 
 export default class Everyday extends Component {
   state = {
@@ -34,12 +35,13 @@ export default class Everyday extends Component {
   render() {
     const { buy, schedule, expenses } = this.state;
     return (
-      <View>
+      <ScrollView>
         <Header headerText="Hey Tanish!" />
+        <VoiceButton />
         <ActivityList title="Schedule" data={schedule} />
         <ActivityList title="Expenses" data={expenses} />
         <ActivityList title="Shopping List" data={buy} />
-      </View>
+      </ScrollView>
     );
   }
 }

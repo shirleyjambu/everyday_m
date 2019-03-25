@@ -22,6 +22,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSMicrophoneUsageDescription</key>
+ 	<string>EveryDay App requires Microphone Access</string>
+ 	<key>NSSpeechRecognitionUsageDescription</key>
+ 	<string>EveryDay App requires Microphone Access</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
